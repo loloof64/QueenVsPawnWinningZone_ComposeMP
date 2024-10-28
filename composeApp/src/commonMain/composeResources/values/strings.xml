@@ -1,0 +1,41 @@
+<resources>
+    <string name="validate">Validate</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="homePageTitle">Home</string>
+    <string name="gamePageTitle">Game</string>
+    <string name="solutionPageTitle">Answer</string>
+
+    <string name="goBack">Go back</string>
+    <string name="swapBoardOrientation">Swap board orientation</string>
+    <string name="close">Close</string>
+
+    <string name="queenPromotion">Queen promotion</string>
+    <string name="rookPromotion">Rook promotion</string>
+    <string name="bishopPromotion">Bishop promotion</string>
+    <string name="knightPromotion">Knight promotion</string>
+
+    <string name="whitePawn">White pawn</string>
+    <string name="whiteKnight">White knight</string>
+    <string name="whiteBishop">White bishop</string>
+    <string name="whiteRook">White rook</string>
+    <string name="whiteQueen">White queen</string>
+    <string name="whiteKing">White king</string>
+
+    <string name="blackPawn">Black pawn</string>
+    <string name="blackKnight">Black knight</string>
+    <string name="blackBishop">Black bishop</string>
+    <string name="blackRook">Black rook</string>
+    <string name="blackQueen">Black queen</string>
+    <string name="blackKing">Black king</string>
+
+    <string name="emptyCell">Empty cell</string>
+    <string name="newGame">New game</string>
+    <string name="legend">Legend</string>
+
+    <string name="goodSquare">Good square</string>
+    <string name="wrongSquare">Wrong square</string>
+    <string name="missedSquare">Missed square</string>
+
+    <string name="exerciceGenerationError">Failed to generate exercise !</string>
+</resources>

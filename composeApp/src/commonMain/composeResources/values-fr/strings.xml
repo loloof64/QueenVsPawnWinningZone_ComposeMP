@@ -1,0 +1,41 @@
+<resources>
+    <string name="validate">Valider</string>
+    <string name="cancel">Annuler</string>
+
+    <string name="homePageTitle">Accueil</string>
+    <string name="gamePageTitle">Jeu</string>
+    <string name="solutionPageTitle">Solution</string>
+
+    <string name="goBack">Revenir</string>
+    <string name="swapBoardOrientation">Tourner l\'échiquier</string>
+    <string name="close">Fermer</string>
+
+    <string name="queenPromotion">Promotion en dame</string>
+    <string name="rookPromotion">Promotion en tour</string>
+    <string name="bishopPromotion">Promotion en fou</string>
+    <string name="knightPromotion">Promotion en cavalier</string>
+
+    <string name="whitePawn">Pion blanc</string>
+    <string name="whiteKnight">Cavalier blanc</string>
+    <string name="whiteBishop">Fou blanc</string>
+    <string name="whiteRook">Tour blanche</string>
+    <string name="whiteQueen">Dame blanche</string>
+    <string name="whiteKing">Roi blanc</string>
+
+    <string name="blackPawn">Pion noir</string>
+    <string name="blackKnight">Cavalier noir</string>
+    <string name="blackBishop">Fou noir</string>
+    <string name="blackRook">Tour noire</string>
+    <string name="blackQueen">Dame noire</string>
+    <string name="blackKing">Roi noir</string>
+
+    <string name="emptyCell">Case vide</string>
+    <string name="newGame">Nouvelle partie</string>
+    <string name="legend">Légende</string>
+
+    <string name="goodSquare">Case correcte</string>
+    <string name="wrongSquare">Case erronée</string>
+    <string name="missedSquare">Case oubliée</string>
+
+    <string name="exerciceGenerationError">Echec de génération d\'exercice !</string>
+</resources>

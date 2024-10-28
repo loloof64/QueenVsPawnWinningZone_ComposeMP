@@ -1,0 +1,41 @@
+<resources>
+    <string name="validate">Confirmar</string>
+    <string name="cancel">Anular</string>
+
+    <string name="homePageTitle">Casa</string>
+    <string name="gamePageTitle">Partida</string>
+    <string name="solutionPageTitle">Solución</string>
+
+    <string name="goBack">Volver</string>
+    <string name="swapBoardOrientation">Cambiar la orientación del tablero</string>
+    <string name="close">Cerrar</string>
+
+    <string name="queenPromotion">Promoción de reina</string>
+    <string name="rookPromotion">Promoción de torre</string>
+    <string name="bishopPromotion">Promoción de alfil</string>
+    <string name="knightPromotion">Promoción de caballero</string>
+
+    <string name="whitePawn">Peón blanco</string>
+    <string name="whiteKnight">Caballero blanco</string>
+    <string name="whiteBishop">Alfil blanco</string>
+    <string name="whiteRook">Torre blanca</string>
+    <string name="whiteQueen">Reina blanca</string>
+    <string name="whiteKing">Rey blanco</string>
+
+    <string name="blackPawn">Peón negro</string>
+    <string name="blackKnight">Caballero negro</string>
+    <string name="blackBishop">Alfil negro</string>
+    <string name="blackRook">Torre negra</string>
+    <string name="blackQueen">Reina negra</string>
+    <string name="blackKing">Rey negro</string>
+
+    <string name="emptyCell">Casilla vacía</string>
+    <string name="newGame">Nueva partida</string>
+    <string name="legend">Leyenda</string>
+
+    <string name="goodSquare">Buena casilla</string>
+    <string name="wrongSquare">Mala casilla</string>
+    <string name="missedSquare">Casilla fallida</string>
+
+    <string name="exerciceGenerationError">¡No se pudo generar el ejercicio!</string>
+</resources>
