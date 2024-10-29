@@ -2,10 +2,7 @@ package screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -16,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import components.ChessBoard
+import com.loloof64.queenvspawnwinningzone.components.OrientationAwareLayout
 import logic.Cell
 import logic.Exercise
 import logic.SelectedCells
@@ -32,12 +30,7 @@ fun GamePage(
     modifier: Modifier = Modifier,
     exercise: Exercise,
 ) {
-    val isWhiteTurn by rememberSaveable { mutableStateOf(exercise.isWhiteTurn) }
     var reversed by rememberSaveable { mutableStateOf(!exercise.isWhiteTurn) }
-    var selectedCells = rememberSaveable(saver = SelectedCells.saver) { SelectedCells() }
-    var selectedCellsSerialized by remember { mutableStateOf(selectedCells.serialized) }
-
-    val navigator = LocalNavigator.currentOrThrow
 
     Scaffold(
         topBar = {
@@ -61,28 +54,53 @@ fun GamePage(
         Surface(
             modifier = modifier.background(color = MaterialTheme.colors.background)
         ) {
-            Row(modifier = modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
-                ChessBoard(
-                    piecesValues = exercise.pieces,
-                    isWhiteTurn = isWhiteTurn,
-                    reversed = reversed,
-                    selectedCellsSerialized = selectedCellsSerialized,
-                    onCellClicked = { file, rank ->
-                        val clickedCell = Cell(file = file, rank = rank)
-                        selectedCells = selectedCells.toggleCell(clickedCell)
-                        selectedCellsSerialized = selectedCells.serialized
+            OrientationAwareLayout(
+                landscapeContent = {
+                    Row(modifier = modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
+                        Content(exercise = exercise, reversed = reversed)
                     }
-                )
-                Surface(modifier = Modifier.fillMaxSize()) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Button(onClick = {
-                            val solution = solve(exercise = exercise, selectedCells = selectedCells.values)
-                            navigator.replace(Solution(solutionData = solution, exercise = exercise))
-                        }) {
-                            Text(stringResource(Res.string.validate))
-                        }
+                },
+                portraitContent = {
+                    Column(modifier = modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Content(exercise = exercise, reversed = reversed)
+                    }
+                },
+                squareContent = {
+                    Column(modifier = modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Content(boardModifier = Modifier.fillMaxSize(0.85f), exercise = exercise, reversed = reversed)
                     }
                 }
+            )
+        }
+    }
+}
+
+@Composable
+fun Content(boardModifier: Modifier = Modifier, exercise: Exercise, reversed: Boolean) {
+    val isWhiteTurn by rememberSaveable { mutableStateOf(exercise.isWhiteTurn) }
+    var selectedCells = rememberSaveable(saver = SelectedCells.saver) { SelectedCells() }
+    var selectedCellsSerialized by remember { mutableStateOf(selectedCells.serialized) }
+    val navigator = LocalNavigator.currentOrThrow
+
+    ChessBoard(
+        modifier = boardModifier.padding(5.dp),
+        piecesValues = exercise.pieces,
+        isWhiteTurn = isWhiteTurn,
+        reversed = reversed,
+        selectedCellsSerialized = selectedCellsSerialized,
+        onCellClicked = { file, rank ->
+            val clickedCell = Cell(file = file, rank = rank)
+            selectedCells = selectedCells.toggleCell(clickedCell)
+            selectedCellsSerialized = selectedCells.serialized
+        }
+    )
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Box(contentAlignment = Alignment.Center) {
+            Button(onClick = {
+                val solution = solve(exercise = exercise, selectedCells = selectedCells.values)
+                navigator.replace(Solution(solutionData = solution, exercise = exercise))
+            }) {
+                Text(stringResource(Res.string.validate))
             }
         }
     }

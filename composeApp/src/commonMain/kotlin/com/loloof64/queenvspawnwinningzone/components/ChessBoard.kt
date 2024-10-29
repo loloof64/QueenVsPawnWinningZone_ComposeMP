@@ -27,6 +27,7 @@ const val emptyCell = ' '
 
 @Composable
 fun ChessBoard(
+    modifier: Modifier = Modifier,
     piecesValues: List<List<Char>>,
     isWhiteTurn: Boolean,
     reversed: Boolean,
@@ -35,13 +36,13 @@ fun ChessBoard(
     onCellClicked: (CellFile, CellRank) -> Unit = { _, _ -> }
 ) {
     val bgColor = Color(0xFF9999FF)
-    BoxWithConstraints {
+    BoxWithConstraints(modifier = modifier) {
         val heightBasedAspectRatio = maxHeight > maxWidth
         val minAvailableSide = if (maxWidth < maxHeight) maxWidth else maxHeight
         val cellSize = minAvailableSide * 0.11f
-
         Box(
-            modifier = Modifier.aspectRatio(1f, heightBasedAspectRatio).background(bgColor)
+            modifier = Modifier.aspectRatio(ratio = 1f, matchHeightConstraintsFirst = heightBasedAspectRatio)
+                .background(bgColor)
         ) {
             LowerLayer(
                 cellSize = cellSize,
@@ -222,7 +223,7 @@ private fun ChessBoardCell(
     if (isMissedCell) bgColor = missedCellColor
     if (isWrongCell) bgColor = wrongCellColor
 
-    ClickableSurface(modifier = modifier.size(size), clickHandler =  {
+    ClickableSurface(modifier = modifier.size(size), clickHandler = {
         onCellClicked(file, rank)
     }) {
         Column(modifier = Modifier.background(bgColor)) {
@@ -259,20 +260,22 @@ fun getVectorForPiece(pieceValue: Char): ImageVector {
 
 @Composable
 fun getContentDescriptionForPiece(pieceValue: Char): String {
-    return stringResource(when (pieceValue) {
-        'P' -> Res.string.whitePawn
-        'N' -> Res.string.whiteKnight
-        'B' -> Res.string.whiteBishop
-        'R' -> Res.string.whiteRook
-        'Q' -> Res.string.whiteQueen
-        'K' -> Res.string.whiteKing
+    return stringResource(
+        when (pieceValue) {
+            'P' -> Res.string.whitePawn
+            'N' -> Res.string.whiteKnight
+            'B' -> Res.string.whiteBishop
+            'R' -> Res.string.whiteRook
+            'Q' -> Res.string.whiteQueen
+            'K' -> Res.string.whiteKing
 
-        'p' -> Res.string.blackPawn
-        'n' -> Res.string.blackKnight
-        'b' -> Res.string.blackBishop
-        'r' -> Res.string.blackRook
-        'q' -> Res.string.blackQueen
-        'k' -> Res.string.blackKing
-        else -> Res.string.emptyCell
-    })
+            'p' -> Res.string.blackPawn
+            'n' -> Res.string.blackKnight
+            'b' -> Res.string.blackBishop
+            'r' -> Res.string.blackRook
+            'q' -> Res.string.blackQueen
+            'k' -> Res.string.blackKing
+            else -> Res.string.emptyCell
+        }
+    )
 }
