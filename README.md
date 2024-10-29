@@ -13,5 +13,5 @@ Try to find all cells belonging to the winning side king zone in the chess endga
 
 ## Credits
 
-* Chess vectors have been downloaded at [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces) and designed by CBurnett.
+* Chess vectors have been downloaded at [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces) and designed by CBurnett. They have been converted into vector drawables and fixed by loloof64.
 * Using some of [Google Material icons](https://fonts.google.com/icons)

@@ -37,5 +37,5 @@
     <string name="wrongSquare">Wrong square</string>
     <string name="missedSquare">Missed square</string>
 
-    <string name="exerciceGenerationError">Failed to generate exercise !</string>
+    <string name="exerciceGenerationError">Failed to generate exercise ! Please, retry.</string>
 </resources>

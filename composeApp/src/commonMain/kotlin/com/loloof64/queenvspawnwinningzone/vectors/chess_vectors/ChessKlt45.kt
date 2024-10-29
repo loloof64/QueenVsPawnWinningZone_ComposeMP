@@ -1,4 +1,4 @@
-package vectors.chess_vectors
+package com.loloof64.queenvspawnwinningzone.vectors.chess_vectors
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
@@ -27,7 +27,7 @@ val ChessKlt45: ImageVector
                 )
                 .apply {
                     path(
-                        fill = null,
+                        fill = SolidColor(Color(0xFF000000)),
                         stroke = SolidColor(Color(0xFF000000)),
                         strokeLineWidth = 1.5f,
                         strokeLineCap = strokeCapRound,
@@ -41,7 +41,7 @@ val ChessKlt45: ImageVector
                         horizontalLineToRelative(5.0f)
                     }
                     path(
-                        fill = SolidColor(Color(0xFF000000)),
+                        fill = SolidColor(Color(0xFFFFFFFF)),
                         stroke = SolidColor(Color(0xFF000000)),
                         strokeLineWidth = 1.5f,
                         strokeLineCap = Butt,
@@ -56,7 +56,7 @@ val ChessKlt45: ImageVector
                         curveToRelative(-1.5f, 3.0f, 3.0f, 10.5f, 3.0f, 10.5f)
                     }
                     path(
-                        fill = SolidColor(Color(0xFF000000)),
+                        fill = SolidColor(Color(0xFFFFFFFF)),
                         stroke = SolidColor(Color(0xFF000000)),
                         strokeLineWidth = 1.5f,
                         strokeLineCap = strokeCapRound,
@@ -73,10 +73,10 @@ val ChessKlt45: ImageVector
                         verticalLineToRelative(-3.5f)
                         curveToRelative(-2.5f, -7.5f, -12.0f, -10.5f, -16.0f, -4.0f)
                         curveToRelative(-3.0f, 6.0f, 6.0f, 10.5f, 6.0f, 10.5f)
-                        close()
+                        verticalLineToRelative(7.0f)
                     }
                     path(
-                        fill = null,
+                        fill = SolidColor(Color(0xFFFFFFFF)),
                         stroke = SolidColor(Color(0xFF000000)),
                         strokeLineWidth = 1.5f,
                         strokeLineCap = strokeCapRound,

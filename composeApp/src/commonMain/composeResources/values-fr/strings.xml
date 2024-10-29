@@ -7,7 +7,7 @@
     <string name="solutionPageTitle">Solution</string>
 
     <string name="goBack">Revenir</string>
-    <string name="swapBoardOrientation">Tourner l\'échiquier</string>
+    <string name="swapBoardOrientation">Tourner l'échiquier</string>
     <string name="close">Fermer</string>
 
     <string name="queenPromotion">Promotion en dame</string>
@@ -37,5 +37,5 @@
     <string name="wrongSquare">Case erronée</string>
     <string name="missedSquare">Case oubliée</string>
 
-    <string name="exerciceGenerationError">Echec de génération d\'exercice !</string>
+    <string name="exerciceGenerationError">Echec de génération d'exercice ! Veuillez réessayer.</string>
 </resources>

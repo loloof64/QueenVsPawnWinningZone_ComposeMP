@@ -17,11 +17,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.loloof64.queenvspawnwinningzone.components.ClickableSurface
+import com.loloof64.queenvspawnwinningzone.vectors.chess_vectors.*
 import common.*
 import logic.*
 import org.jetbrains.compose.resources.stringResource
 import queenvspawnwinningzone.composeapp.generated.resources.*
-import vectors.chess_vectors.*
 
 const val emptyCell = ' '
 

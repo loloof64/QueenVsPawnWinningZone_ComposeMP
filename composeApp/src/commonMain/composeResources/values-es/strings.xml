@@ -37,5 +37,5 @@
     <string name="wrongSquare">Mala casilla</string>
     <string name="missedSquare">Casilla fallida</string>
 
-    <string name="exerciceGenerationError">¡No se pudo generar el ejercicio!</string>
+    <string name="exerciceGenerationError">¡No se pudo generar el ejercicio! Por favor, intenta otra vez.</string>
 </resources>
